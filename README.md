@@ -1,4 +1,4 @@
-# Ticket Management System
+# Office Ticket Management System
 
 A **C++17** console-based ticket management system built as a DSA final project. Every major data structure and algorithm is implemented from scratch — no STL containers are used for the core logic (except `std::stack` for the resolution log and `std::vector` as a dynamic array backing the heap).
 
