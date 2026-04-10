@@ -135,24 +135,6 @@ Four demo tickets are also pre-loaded so you can explore all features immediatel
 - **`mergeParts`** (internal helper) is deliberately named to avoid ADL ambiguity with `std::merge`.
 
 ---
-
-## Bug Fixes Over Original
-
-| # | Bug | Fix Applied |
-|---|-----|------------|
-| 1 | `srand` called in `run()` after `rand()` used in constructor | Moved to top of constructor |
-| 2 | `bubbleSort` underflows when `agents.size() < 2` | Added `if (n < 2) return` guard |
-| 3 | `merge()` static method could be confused with `std::merge` | Renamed to `mergeParts()` |
-| 4 | `getQueue()` returned `queues[3]` silently for invalid types | Now returns `nullptr`; callers check |
-| 5 | No destructors → memory leaks on all heap allocations | Added destructors to all owning classes |
-| 6 | `cin.ignore(1000, '\n')` – magic number | Replaced with `numeric_limits<streamsize>::max()` |
-| 7 | `size_t` subtraction underflow in loop bounds | Switched loop variables to `int` with cast |
-| 8 | User name input (`cin >> n`) discarded spaces | Changed to `getline` after `clearInput()` |
-| 9 | Windows CRLF line endings | Normalised to LF |
-| 10 | Copy constructors not deleted on owning classes | `= delete` added |
-
----
-
 ## License
 
 MIT — see [LICENSE](LICENSE) for details.
@@ -160,5 +142,4 @@ MIT — see [LICENSE](LICENSE) for details.
 ---
 
 ## Author
-
-DSA Final Project – C++17
+Mughees Khan
